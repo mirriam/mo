@@ -3002,7 +3002,7 @@ def _build_guest_api_url(keyword: str, start: int) -> str:
     return (
         "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
         f"?location=Macao&f_TPR=r604800&keywords={kw}&start={start}"
-    ))
+    )
 
 def _collect_job_urls_from_cards(html: str, seen: set) -> list:
     found = []

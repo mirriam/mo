@@ -1535,11 +1535,10 @@ def crawl_company_website_deep(website_url: str, job_title: str) -> dict:
                     r"(?:street|st\b|avenue|ave\b|road|rd\b|boulevard|blvd|"
                     r"lane|ln\b|drive|dr\b|way\b|close|court|building|floor|"
                     r"suite|tower|plaza|district|zone|p\.?\s*o\.?\s*box|"
-                    r"malé|addu city|fuvahmulah|kulhudhuffushi|thinadhoo|"
-                    r"hulhumalé|vilimalé|velingili|maafushi|dhiffushi|"
-                    r"male city|male' |hulhumale|velingili|"
-                    r"maldives|south male atoll|north male atoll|"
-                    r"ari atoll|baa atoll|dhaalu atoll",
+                    r"macau|macao|macau peninsula|taipa|coloane|cotai|"
+                    r"macau tower|senado square|ruins of st paul|"
+                    r"taipa village|cotai strip|"
+                    r"macau sar|macau china|zhuhai macau",
                     full_text, re.I)
                 if addr_m:
                     result["address"] = addr_m.group(0).strip()[:250]
@@ -1890,11 +1889,10 @@ def scrape_about_contact_footer(website_url: str) -> dict:
                     r"(?:street|st\b|avenue|ave\b|road|rd\b|boulevard|blvd|"
                     r"lane|ln\b|drive|dr\b|way\b|close|court|building|floor|"
                     r"suite|tower|plaza|district|zone|p\.?\s*o\.?\s*box|"
-                    r"malé|addu city|fuvahmulah|kulhudhuffushi|thinadhoo|"
-                    r"hulhumalé|vilimalé|velingili|maafushi|dhiffushi|"
-                    r"male city|male' |hulhumale|velingili|"
-                    r"maldives|south male atoll|north male atoll|"
-                    r"ari atoll|baa atoll|dhaalu atoll",
+                    r"macau|macao|macau peninsula|taipa|coloane|cotai|"
+                    r"macau tower|senado square|ruins of st paul|"
+                    r"taipa village|cotai strip|"
+                    r"macau sar|macau china|zhuhai macau",
                     full_text, re.I)
                 if addr_m:
                     result["address"] = addr_m.group(0).strip()[:250]
@@ -3003,8 +3001,8 @@ def _build_guest_api_url(keyword: str, start: int) -> str:
     kw = quote_plus(keyword)
     return (
         "https://www.linkedin.com/jobs-guest/jobs/api/seeMoreJobPostings/search"
-        f"?location=Maldives&f_TPR=r604800&keywords={kw}&start={start}"
-    )
+        f"?location=Macao&f_TPR=r604800&keywords={kw}&start={start}"
+    ))
 
 def _collect_job_urls_from_cards(html: str, seen: set) -> list:
     found = []
